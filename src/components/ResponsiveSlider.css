@@ -1,0 +1,11 @@
+/* ResponsiveSlider.css */
+.responsive-slider-container {
+    width: 100%; /* 원하는 크기로 조정 */
+}
+
+.responsive-slider-item-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

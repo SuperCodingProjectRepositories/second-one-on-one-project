@@ -1,0 +1,15 @@
+.movie-card {
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.movie-card img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
