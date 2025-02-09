@@ -4,38 +4,49 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ResponsiveSlider.css'
 import MovieCard from "./Movie/MovieCard";
-import moviesData from "../models/moviesData";
 
-const ResponsiveSlider = () => {
-    const [movies, setMovies] = React.useState(moviesData);
+const ResponsiveSlider = ({movies}) => {
 
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, // 기본값
-        centerMode: true,
+        slidesToShow: 5, // 기본값
+        slidesToScroll: 5,
+        accessibility: false,
+        focusOnSelect: true,
         responsive: [
+            {
+                breakpoint: 1224, // 화면 너비 1024px 이하일 때
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
             {
                 breakpoint: 1024, // 화면 너비 1024px 이하일 때
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                 }
             },
+            {
+                breakpoint: 800, // 화면 너비 600px 이하일 때
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }
+            ,
             {
                 breakpoint: 600, // 화면 너비 600px 이하일 때
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    centerMode: false,
-                    centerPadding: "0px",
                 }
             }
         ]
     };
-
     return (
         <div className="responsive-slider-container">
             <Slider {...settings}>

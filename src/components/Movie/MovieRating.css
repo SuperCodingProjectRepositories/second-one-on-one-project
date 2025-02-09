@@ -1,0 +1,20 @@
+.movie-rating {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f39c12; /* 별 색상 (노란색) */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: fit-content;
+  gap: 5px; /* 아이콘과 텍스트 사이 간격 */
+  margin: 5px 0;
+}
+
+.star-icon {
+  width: 24px !important; /* ✅ 강제 적용 */
+  height: 24px !important;
+  min-width: 24px; /* ✅ 최소 크기 강제 */
+  min-height: 24px;
+  flex-shrink: 0; /* ✅ 축소되지 않도록 */
+}

@@ -1,26 +1,40 @@
 import React from 'react';
 import MovieRating from "./MovieRating";
 import MovieReleaseData from "./MovieReleaseData";
-import MovieDetailButton from "./MovieDetailButton";
-import MovieFavoriteButton from "./MovieFavoriteButton";
+import MovieCardButton from "./MovieCardButton";
 import "./MovieCard.css"
+import MovieGenre from "./MovieGenre";
+
 const MovieCard = ({movie}) => {
-    return (
-        <div className="movie-card">
-            <img
-                src={movie.poster_path}
-                alt={movie.title}
-            />
-            <div className="movie-card-container">
-                <h3 className="movie-card-title">{movie.title}</h3>
-                <p className="movie-card-genre">{movie.genres}</p>
-                <MovieRating rating={movie.rating} />
-                <MovieReleaseData releaseData={movie.release} />
-                <MovieDetailButton />
-                <MovieFavoriteButton />
-            </div>
+  return (
+    <div className="movie-card">
+      <div className="movie-card-container">
+        <img
+          src={movie.poster_path}
+          alt={movie.title}
+        />
+        <div className="movie-card-content-container">
+          <div className="movie-card-title">{movie.title}</div>
+
+          <div className="movie-card-genre-container">
+            {movie.genres.map((genre,index) => (
+              <MovieGenre key={index} genre={genre}/>
+            ))}
+          </div>
+
+          <div className="movie-rating-release-container">
+            <MovieRating rating={movie.vote_average}/>
+            <MovieReleaseData releaseData={movie.release_date}/>
+          </div>
+
+          <div className="movie-card-buttons-container">
+            <MovieCardButton label={"상세보기"}/>
+            <MovieCardButton label={"좋아요"}/>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default MovieCard;

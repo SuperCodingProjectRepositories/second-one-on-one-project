@@ -1,0 +1,17 @@
+.movie-release-data {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #040404;
+  white-space: nowrap; /* ✅ 텍스트 줄바꿈 방지 */
+  margin: 5px 0;
+}
+
+.release-icon {
+  width: 24px !important; /* ✅ 강제 적용 */
+  height: 24px !important;
+  min-width: 24px; /* ✅ 최소 크기 강제 */
+  min-height: 24px;
+  flex-shrink: 0; /* ✅ 축소되지 않도록 */
+}

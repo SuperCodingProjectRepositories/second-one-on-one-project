@@ -1,0 +1,23 @@
+.movie-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 버튼 스타일 */
+.movie-card-buttons button {
+  flex: 1;
+  background-color: #ff4757;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card-buttons button:hover {
+  background-color: #e84118;
+  transform: scale(1.05);
+}
